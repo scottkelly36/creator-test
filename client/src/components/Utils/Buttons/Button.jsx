@@ -1,7 +1,12 @@
-import React from "react";
+import "./Buttons.scss";
+import { Navigate } from "react-router-dom";
 
-const Button = () => {
-  return <div>Button</div>;
+const Button = ({ text, action }) => {
+  return (
+    <button className="btn btn-primary" action={action}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

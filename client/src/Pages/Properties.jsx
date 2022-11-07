@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "../components/Utils/Slider/Slider";
 import Card from "../components/Utils/Card/Card";
+import Loading from "../components/Utils/Loading/Loading";
 
 const Properties = () => {
   const [loading, setLoading] = useState(true);
@@ -15,13 +16,13 @@ const Properties = () => {
   }, []);
 
   return loading ? (
-    <div>Loading</div>
+    <Loading />
   ) : (
-    properties.forEach((property) => {
+    properties.map((property) => {
       return (
-        <article className="property-container">
-          <Slider images={property.media} />
-          <Card />
+        <article className="property">
+          <Slider images={property.media.photos} />
+          <Card property={property} />
         </article>
       );
     })

@@ -1,0 +1,46 @@
+.property {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-card {
+        width: 50%;
+        min-width: 500px;
+        height: 228px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: absolute;
+        padding: 25px;
+        top: 11px;
+        left: 30%;
+        z-index: 2;
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    &-icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &-price {
+        display: flex;
+        width: fit-content;
+    }
+
+
+}
+
+.icon {
+    color: #F15B40;
+    font-size: 24px;
+    margin-right: 5px;
+
+    &-container {
+        display: flex;
+        align-items: center;
+    }
+}

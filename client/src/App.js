@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Properties from "./Pages/Properties";
 import Property from "./Pages/Property";
+import "./app.scss";
 
 function App() {
   return (

@@ -1,0 +1,13 @@
+.btn {
+    width: 100%;
+    height: 46px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
+
+    &-primary {
+        border: 0.75px solid #F15B40;
+        background-color: #F15B40;
+        color: white;
+    }
+}
