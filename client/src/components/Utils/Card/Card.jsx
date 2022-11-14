@@ -18,7 +18,7 @@ const Card = ({ property }) => {
           <IoSettingsOutline className="icon" />
         </Link>
       </h2>
-      <p className="text-light">Available from</p>
+      <p className="text-light">Available from {property.contracts[0] ? new Date(property.contracts[0].start_date).toLocaleDateString('en-us', { month:"short", year:"numeric" }) : "N/A"}</p>
       <div className="property-icons">
         <div className="icon-container">
           <IoBedOutline className="icon" /> {property.room_details.length}{" "}

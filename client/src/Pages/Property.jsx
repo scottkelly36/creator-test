@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import axios from "axios";
 import Loading from "../components/Utils/Loading/Loading";
 import LargeCard from "../components/Utils/LargeCard/LargeCard";
+import Form from "../components/Utils/Forms/Form";
 
 const Property = () => {
   const { property_id } = useParams();
@@ -16,21 +18,11 @@ const Property = () => {
     });
   }, [property_id]);
 
-  console.log(property);
-  return loading ? (
-    <Loading />
-  ) : (
-    property.room_details.map((room, index) => {
-      return (
-        <LargeCard
-          key={index}
-          room={room}
-          contracts={property.contracts[0]}
-          index={index}
-        />
-      );
-    })
-  );
+  return loading ? 
+  <Loading/> :
+
+  <Form property={property}/>
+  
 };
 
 export default Property;

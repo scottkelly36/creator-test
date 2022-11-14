@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Properties />} />
           <Route path="/:property_id" element={<Property />} />
+          
         </Routes>
       </BrowserRouter>
     </div>

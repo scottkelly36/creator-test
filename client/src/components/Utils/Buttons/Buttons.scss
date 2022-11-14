@@ -4,6 +4,10 @@
     border-radius: 2px;
     font-size: 14px;
     font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-primary {
         border: 0.75px solid #F15B40;
