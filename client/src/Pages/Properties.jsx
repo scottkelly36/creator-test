@@ -18,9 +18,9 @@ const Properties = () => {
   return loading ? (
     <Loading />
   ) : (
-    properties.map((property) => {
+    properties.map((property, index) => {
       return (
-        <article className="property">
+        <article className="property" key={index}>
           <Slider images={property.media.photos} />
           <Card property={property} />
         </article>
