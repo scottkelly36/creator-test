@@ -5,14 +5,27 @@ const propertyData = path.join(__dirname, "../apiData.json");
 
 exports.selectProperties = () => {
   return fs.readFile(propertyData).then((result) => {
-    return JSON.parse(result);
-    //return result.data.properties;
+    if (JSON.parse(result).length === 0) {
+      return Promise.reject({
+        status: 404,
+        msg: "No properties found",
+      });
+    } else {
+      return JSON.parse(result);
+    }
   });
 };
 
 exports.selectProperty = (id) => {
   return fs.readFile(propertyData).then((result) => {
-    return JSON.parse(result).filter((property) => property.property_id === id);
+    const property = JSON.parse(result).filter(
+      (property) => property.property_id === id
+    );
+    if (property.length === 0) {
+      return Promise.reject({ status: 404, msg: "Property cant be found" });
+    } else {
+      return property;
+    }
   });
 };
 
